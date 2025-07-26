@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildSky</title>
+    <link rel="stylesheet" href="WildSky-style-sheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 🔹 Header -->
+    <header>
+        <!-- 🔸 Logo -->
+        <a href="#"><img src="images/LOGO.png"></a>
+
+        <!-- 🔸 Header links -->
+        <nav class="menu">
+            <a href="#">Donation</a>
+            <a href="#">News</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+        </nav>
+          <!-- 🔸 Hamburger Menu for Tablets and cellphones -->
+        <button class="menu-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+    <!-- 🔹 Main content -->
+    <main>
+        <div class="hero-section">
+            <img class="hero-mobile-image" src="images/hero-mobile-image.png">
+            <img class="hero-pc-image" src="images/actual-wildsky-herosection-image.png">
+            <p class="explore">EXPLORE THE<br>NIGHT SKY </p>
+            <p class="here">Here you’ll find everything about the<br> night, tips and advice for a better<br> experience watching the stars,<br> planets and galaxies. </p>
+        </div>
+
+        <div class="content">
+            <!-- This div contains all the content of the website after the hero section,
+                 here we will find the section about orion constalation and the cards.  -->
+
+                <p class="discover">Discover</p>
+
+                    <div class="orion-content">
+                        <!-- The divs inside the div "orion-content" was
+                             made to adjust its content with the Flex Box -->
+
+                        <div class="orion-image-container">
+                            <img class="orion" src="images/orion image and orange retangle.png">
+                        </div>
+
+                        <div class="orion-text-container">
+                            <div class="orion-div-adjust">
+                                <p class="orion-title">Orion, The Hunter:</p>
+                                <p class="orion-invite-text">
+                                One of the most iconic constellations in our sky,<br>
+                                Orion’s bright belt and glowing stars have guided<br>
+                                explorers and inspired myths for thousands of<br>
+                                years.<br>
+                                Follow his story across the heavens — and<br>
+                                discover the wonders that surround him.</p>
+                                <button class="learn-more">Learn more</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+            <!-- 🔸 Cards Section -->
+            <div class="cards">
+
+                <div class="card-background">  <!-- 🔸 Card 1 -->
+                    <img src="images/image card 1.png">
+                    <div class="card-text">
+                        <p>Discover the best place<br>
+                           to look at the sky</p>
+                        <button onclick="window.location.href='#'" class="learn-more-card">Learn more</button>
+                    </div>
+                </div>
+
+                
+
+                <div class="card-background">  <!-- 🔸 Card 2 -->
+                    <img src="images/image card 2.png">
+                    <div class="card-text">
+                        <p>Discover communities<br>
+                           that like the night sky</p>
+                        <button onclick="window.location.href='#'" class="learn-more-card">Learn more</button>
+                    </div>
+                </div>
+
+                <div class="card-background">  <!-- 🔸 Card 3 -->
+                    <img src="images/image card 3.png">
+                    <div class="card-text">
+                        <p>Discover the Milky<br>
+                           Way</p>
+                        <button onclick="window.location.href='#'" class="learn-more-card">Learn more</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 🔹 Footer -->
+    <footer>
+        <a href="#"><img src="images/LOGO.png"></a> <!-- 🔸 Footer Logo -->
+        <p>© Wild Sky. Crafted with care. All rights reserved.</p>
+        <div class="line"></div>
+        <div class="social-medias"> <!-- 🔸 Social media buttons -->
+            <a href="#"><img class="face-book" src="images/facebook-icon.png"></a>
+            <a href="#"><img class="instagram" src="images/instagram-icon.png"></a>
+            <a href="#"><img class="youtube" src="images/youtube-icon.png"></a>
+            <a href="#"><img class="discord"  src="images/discord-icon.png"></a>
+            <a href="#"><img class="twitter" src="images/twiter-icon.png"></a>
+        </div>
+    </footer>
+
+            <!-- 🔹 JavaScript Link -->
+    
+    <script src="JavaScript-WildSky.js"></script>
+    
+</body>
+</html>

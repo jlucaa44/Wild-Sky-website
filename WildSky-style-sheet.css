@@ -1,0 +1,633 @@
+
+/* 🔹 RESET AND BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #001024;
+}
+
+/* Base styles for mobile and tablet (max-width: 1023px) */
+@media (max-width: 1023px) {
+    header {
+        background-color: #001024;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+        width: 100%;
+    }
+
+    .menu-hamburger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 33px;
+        height: 23px;
+        position: relative;
+        margin-right: 1.5rem;
+    }
+
+    .menu-hamburger span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: white;
+        transition: all 0.4s ease;
+        z-index: 7;
+    }
+
+    .menu {
+        opacity: 0;
+        transform: translateX(100%);
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #000F23F2;
+        width: 45vw;
+        height: 77vw;
+        flex-direction: column;
+        padding: 1rem;
+        z-index: 4;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5vw;
+        border-radius: 1.5%;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        display: flex; /* Preserves layout space while hiding the element */
+    }
+
+    .menu.open {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .menu.open a {
+        position: relative;
+        top: 4%;
+        font-family: 'kreon';
+        font-size: 7vw;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* 🔸 Hamburguer menu animations */
+
+    .menu-hamburger span:nth-child(1) {
+        top: 0;
+    }
+
+    .menu-hamburger span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-hamburger span:nth-child(3) {
+        bottom: 0;
+    }
+
+    .menu-hamburger.active span:nth-child(1) {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+
+    .menu-hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburger.active span:nth-child(3) {
+        bottom: auto;
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+
+    /* 🔹 Hero Section */
+
+    .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-mobile-image {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-pc-image {  /* this image should be only showed on pc screens */
+        display: none;
+    }
+
+    /* 🔹 MAIN */
+
+    .explore {
+        color: white;
+        position: absolute;
+        z-index: 2;
+        text-align: center;
+        font-family: 'kreon';
+        font-size: 9vw;
+        top: 20px;
+        line-height: 109%;
+
+    }
+    .here {
+        color: white;
+        position: absolute;
+        z-index: 3;
+        text-align: center;
+        font-family: 'kreon';
+        font-size: 4vw;
+        bottom: -16px;
+        line-height: 123%;
+        font-weight: 700;
+
+    }
+    .discover {
+        display: flex;
+        color: white;
+        justify-content: center;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        font-size: 7vw;
+        font-family: 'kreon';
+        letter-spacing: 0.10rem;
+        font-weight: bold;
+    }
+
+    /* 🔸 Orion Section */
+
+    .orion-image-container {
+        display: flex;
+        justify-content: center;
+    }
+    .orion {
+        height: auto;
+        width: 75vw;
+    }
+
+    .orion-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 9%;
+        margin-bottom: 19%;
+    }
+
+    .orion-title {
+        color: #F3926D;
+        font-family: 'kreon';
+        margin-bottom: 5%;
+        font-size: 5vw;
+    }
+
+    .orion-invite-text {
+        color: white;
+        font-family: 'kreon';
+        font-size: 3.7vw;
+        margin-bottom: 6%;
+    }
+
+    .learn-more {
+        font-family: 'kreon';
+        font-weight: bold;
+        font-size: 3.7vw;
+        border-radius: 8px;
+        padding: 1.2vw 3vw;
+        color: #001024;
+        border: 0;
+    }
+
+    /* 🔸 Cards section */
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15vw;
+        margin-bottom: 10vw;
+    }
+
+    .card-background {
+        display: flex;
+        flex-direction: column;
+        aspect-ratio:  3 / 5;
+        height: 100%;
+        width: 30vw;
+        background-color: white;
+        border-radius: 7.5px;
+    }
+
+    .card-background p {
+        color: black;
+        font-family: 'kreon';
+        font-weight: bold;
+        font-size: 2.65vw;
+        display: flex;
+        margin-left: 2.6vw;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+
+    .learn-more-card {
+        border: 0;
+        font-family: 'kreon';
+        font-weight: bold;
+        margin-left: 2.6vw;
+        background-color: black;
+        color: white;
+        font-size: 2.4vw;
+        padding: 0.7vw 1.5vw;
+        border-radius: 5.37px;
+    }
+
+    /* 🔹 FOOTER */
+
+    footer {
+        aspect-ratio: 3 / 1;
+        width: 100%;
+        height: auto;
+        background-color: #0A142F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+    }
+
+    footer img {
+        height: auto;
+        width: 22vw;
+        margin-bottom: 0.5vw;
+    }
+
+    footer p {
+        color: white;
+        font-size: 2.8vw;
+        font-family: 'Lato';
+        margin-bottom: 2vw;
+    }
+
+    .line {
+        width: 75vw;
+        height: 0.3vw;
+        background-color: white;
+        margin-bottom: 2vw;
+    }
+
+    /* 🔸 Social Medias bottons */
+
+    .social-medias {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4vw;
+    }
+
+    .face-book {
+        width: auto;
+        height: 3.8vw;
+    }
+
+    .instagram {
+        width: auto;
+        height: 4vw;
+    }
+
+    .youtube {
+        width: auto;
+        height: 5.05vw;
+    }
+
+    .discord {
+        width: auto;
+        height: 4.3vw;
+    }
+
+    .twitter {
+        width: auto;
+        height: 4vw;
+    }
+}
+
+
+/* Specific adjust for mobile screens */
+
+
+@media (max-width: 480px) {
+
+    header {
+        height: 5rem;
+    }
+    header img {
+        margin-left: 1.5rem;
+        height: 2rem;
+    }
+    .menu-hamburger {
+        margin-right: 1.5rem;
+    }
+    .card-background {
+        border-radius: 7.5px;
+    }
+}
+
+/* Specific adjust for tablets screens */
+@media (min-width: 481px) and (max-width: 1023px) {
+    header {
+        height: 7rem;
+    }
+    header img {
+        margin-left: 2.7rem;
+        height: 3.5rem;
+    }
+    .menu-hamburger {
+        margin-right: 2.7rem;
+    }
+    .card-background {
+        border-radius: 4%;
+    }
+}
+
+
+/* Desktop */
+
+@media (max-width: 1440px) and (min-width: 1024px) {
+    
+    /* 🔹 HEADER */
+    header {
+        background-color: #001024;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7.5vw;
+        width: 100%;
+    }
+    
+    header img {
+        height: 4vw;
+        width: auto;
+        cursor: pointer;
+        margin-left: 7.5vw;
+    }
+
+    .menu {
+        margin-right: 7.5vw;
+    }
+
+    .menu-hamburger {
+        display: none;
+    }
+
+    .hero-mobile-image { /* This image must be showed only in mobile and tablets screens */
+        display: none;
+    }
+
+    .hero-pc-image {
+        width: 100%;
+    }
+
+    .menu {
+        display: flex;
+        gap: 2.6vw;
+    }
+
+    .menu a {
+        font-family: 'kreon';
+        font-size: 2.4vw;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+        color: #F3926D;
+    }
+
+
+    /* 🔹 Hero Section */
+
+    .hero-section {
+        position: relative;
+        display: flex;
+    }
+
+    /* 🔸 hero section text */
+
+    .explore{
+        color: white;
+        position: absolute;
+        z-index: 2;
+        text-align:left;
+        font-family: 'kreon';
+        font-size: 8vw;
+        top: 6vw;
+        left: 8vw;
+        line-height: 109%;
+
+    }
+
+    .here {
+        color: white;
+        position: absolute;
+        z-index: 3;
+        text-align: left;
+        font-family: 'kreon';
+        font-size: 2.4vw;
+        top: 26.5vw;
+        left: 8vw;
+        line-height: 123%;
+        font-weight: 550;
+        letter-spacing: 0.05vw;
+
+    }
+
+
+    /* 🔹 MAIN */
+
+    .discover {
+        display: flex;
+        color: white;
+        justify-content: center;
+        margin-top: 11%;
+        margin-bottom: 3%;
+        font-size: 4.2vw;
+        font-family: 'kreon';
+        letter-spacing: 0.10rem;
+        font-weight: bold;
+    }
+
+    .orion-content {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 7vw;
+        margin-bottom: 16vw;
+    }
+
+    .orion {
+        height: auto;
+        width: 39.5vw;
+    }
+
+    .orion-title {
+        color: #F3926D;
+        font-family: 'kreon';
+        font-size: 2.6vw;
+        margin-bottom: 2vw;
+    }
+
+    .orion-invite-text {
+        color: white;
+        font-family: 'kreon';
+        font-size: 1.75vw;
+        margin-bottom: 2vw;
+    }
+
+    .learn-more {
+        font-family: 'kreon';
+        font-weight: bold;
+        font-size: 1.5vw;
+        border-radius: 10px;
+        padding: 0.55vw 1.3vw;
+        color: #001024;
+        border: 0;
+        transition: color 0.2s ease;
+    }
+
+
+    .learn-more:hover {
+        background-color: #F3926D;
+        color: white;
+    }
+
+    /* 🔸 Cards Section */
+    .cards {
+        display: flex;
+        justify-content: center;
+        gap: 11vw;
+        margin-bottom: 17vw;
+        margin-left: 7.5vw;
+        margin-right: 7.5vw;
+    }
+
+    .card-background {
+        display: flex;
+        flex-direction: column;
+        aspect-ratio:  3 / 5;
+        height: 100%;
+        width: 21vw;
+        background-color: white;
+        border-radius: 1vw;
+    }
+
+    .card-background p {
+        color: black;
+        font-family: 'kreon';
+        font-weight: bold;
+        font-size: 1.8vw;
+        display: flex;
+        margin-left: 2vw;
+        padding-top: 2.4vw;
+        padding-bottom: 1.16vw;
+    }
+
+    .learn-more-card {
+        border: 0;
+        font-family: 'kreon';
+        font-weight: bold;
+        margin-left: 2vw;
+        background-color: black;
+        color: white;
+        font-size: 1.6vw;
+        padding: 0.5vw 1.2vw;
+        border-radius: 0.86vw;
+        transition: color 0.2s ease;
+
+    }
+ 
+    .learn-more-card:hover {
+        background-color: #F3926D;
+        color: #0A142F;
+    }
+
+
+    /* 🔹 FOOTER */
+
+    footer {
+        aspect-ratio: 80 / 17;;
+        width: 100%;
+        height: auto;
+        background-color: #0A142F;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+    }
+
+    footer img {  /* logo image for the footer */
+        height: auto;
+        width: 10.51875vw;
+        margin-bottom: 0.2390625vw;
+    }
+
+    footer p {
+        color: white;
+        font-size: 1.33875vw;
+        font-family: 'Lato';
+        margin-bottom: 0.95625vw;
+    }
+
+    .line {
+        width: 39.859375vw;
+        height: 0.1034375vw;
+        background-color: white;
+        margin-bottom: 0.95625vw;
+    }
+
+    
+    /* 🔸 Social Medias bottons */
+
+    .social-medias {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.9125vw;
+    }
+
+    .face-book {
+        width: auto;
+        height: 1.816875vw;
+    }
+
+    .instagram {
+        width: auto;
+        height: 1.9125vw;
+    }
+
+    .youtube {
+        width: auto;
+        height: 2.41453125vw;
+    }
+
+    .discord {
+        width: auto;
+        height: 2.0559375vw;
+    }
+
+    .twitter {
+        width: auto;
+        height: 1.9125vw;
+    }
+
+}
